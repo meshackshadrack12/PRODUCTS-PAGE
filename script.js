@@ -1,26 +1,50 @@
 const products = [];
 let cartCount = 0;
 
-/* Generate realistic products */
 function createProducts() {
-  const categories = ["Clothes", "Footwear", "Electronics"];
 
-  categories.forEach(category => {
-    for (let i = 1; i <= 7; i++) {
-      products.push({
-        name: `${category} ${i}`,
-        category,
-        price: (i * 20) + 20,
-        desc: `High-quality ${category.toLowerCase()} product`,
-        images: [
-          `./images/clothe1.png`,
-          `./images/${category}-alt${i}.jpg`
-        ]
-      });
-    }
-  });
+  // CLOTHES
+  for (let i = 1; i <= 7; i++) {
+    products.push({
+      name: `Clothe ${i}`,
+      category: "clothes",
+      price: (i * 10) + 20,
+      desc: `Stylish clothing item number ${i} designed for comfort and fashion.`,
+      images: [
+        `IMAGES/Clothes/clothe${i}.png`,
+        `IMAGES/Clothes/clothe${i}.png`
+      ]
+    });
+  }
+
+  // FOOTWEAR
+  for (let i = 1; i <= 7; i++) {
+    products.push({
+      name: `Footwear ${i}`,
+      category: "footwear",
+      price: (i * 15) + 30,
+      desc: `Durable and trendy footwear number ${i} for everyday use.`,
+      images: [
+        `IMAGES/Footwear/footwear${i}.png`,
+        `IMAGES/Footwear/footwear${i}.png`
+      ]
+    });
+  }
+
+  // ELECTRONICS
+  for (let i = 1; i <= 7; i++) {
+    products.push({
+      name: `Electronic ${i}`,
+      category: "electronics",
+      price: (i * 50) + 100,
+      desc: `High-performance electronic device number ${i} with modern features.`,
+      images: [
+        `IMAGES/Electronics/electronic${i}.png`,
+        `IMAGES/Electronics/electronic${i}.png`
+      ]
+    });
+  }
 }
-
 /* Display products */
 function displayProducts(list) {
   const container = document.getElementById("product-container");
