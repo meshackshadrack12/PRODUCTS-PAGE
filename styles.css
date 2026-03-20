@@ -43,6 +43,8 @@ body {
   padding: 10px 15px;
   border: none;
   background: orange;
+  border-radius: 10px;
+  transform: translate(1.1);
   cursor: pointer;
 }
 

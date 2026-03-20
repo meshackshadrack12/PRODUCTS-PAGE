@@ -1,3 +1,4 @@
+
 const products = [];
 let cartCount = 0;
 
@@ -9,7 +10,7 @@ function createProducts() {
       name: `Clothe ${i}`,
       category: "clothes",
       price: (i * 10) + 20,
-      desc: `Stylish clothing item number ${i} designed for comfort and fashion.`,
+      desc: clothesDescriptions[i - 1],
       images: [
         `IMAGES/Clothes/clothe${i}.png`,
         `IMAGES/Clothes/clothe${i}.png`
@@ -23,7 +24,7 @@ function createProducts() {
       name: `Footwear ${i}`,
       category: "footwear",
       price: (i * 15) + 30,
-      desc: `Durable and trendy footwear number ${i} for everyday use.`,
+     desc: footwearDescriptions[i - 1],
       images: [
         `IMAGES/Footwear/footwear${i}.png`,
         `IMAGES/Footwear/footwear${i}.png`
@@ -37,7 +38,7 @@ function createProducts() {
       name: `Electronic ${i}`,
       category: "electronics",
       price: (i * 50) + 100,
-      desc: `High-performance electronic device number ${i} with modern features.`,
+      desc: electronicsDescriptions[i - 1],
       images: [
         `IMAGES/Electronics/electronic${i}.png`,
         `IMAGES/Electronics/electronic${i}.png`
@@ -78,10 +79,19 @@ function displayProducts(list) {
     });
 
     // add to cart
-    card.querySelector("button").onclick = () => {
-      cartCount++;
-      document.getElementById("cart-count").innerText = cartCount;
-    };
+   body.querySelector("button").onclick = (e) => {
+  cartCount++;
+  document.getElementById("cart-count").innerText = cartCount;
+
+  const btn = e.target;
+  btn.innerText = "Added ✓";
+  btn.style.background = "green";
+
+  setTimeout(() => {
+    btn.innerText = "Add to Cart";
+    btn.style.background = "black";
+  }, 1000);
+};
 
     container.appendChild(card);
   });
@@ -107,5 +117,34 @@ document.getElementById("search").addEventListener("input", (e) => {
 });
 
 /* Init */
+const clothesDescriptions = [
+  "Lightweight cotton t-shirt for everyday comfort.",
+  "Premium hoodie designed for warmth and style.",
+  "Slim-fit jeans with a modern look.",
+  "Casual shirt perfect for weekend wear.",
+  "Breathable sportswear for active lifestyles.",
+  "Classic jacket built for durability.",
+  "Elegant outfit suitable for special occasions."
+];
+
+const footwearDescriptions = [
+  "Comfortable sneakers for daily wear.",
+  "High-performance running shoes.",
+  "Stylish boots with strong grip.",
+  "Light sandals perfect for warm weather.",
+  "Durable trainers for sports activities.",
+  "Classic leather shoes for formal occasions.",
+  "Slip-on shoes designed for convenience."
+];
+
+const electronicsDescriptions = [
+  "Smartphone with advanced camera features.",
+  "High-speed laptop for work and gaming.",
+  "Wireless headphones with clear sound.",
+  "Smartwatch with fitness tracking.",
+  "Portable speaker with deep bass.",
+  "Tablet perfect for entertainment and study.",
+  "45 in 1 Precision Screwdriver Set for Phone Computer Repair"
+];
 createProducts();
 displayProducts(products);
