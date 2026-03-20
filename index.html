@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EliteStore Advanced</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">Elite<span>Store</span></div>
+
+  <input type="text" id="search" placeholder="Search products...">
+
+  <div class="cart">
+    🛒 <span id="cart-count">0</span>
+  </div>
+</header>
+
+<section class="filters">
+  <button onclick="filterProducts('all')">All</button>
+  <button onclick="filterProducts('Clothes')">Clothes</button>
+  <button onclick="filterProducts('Footwear')">Footwear</button>
+  <button onclick="filterProducts('Electronics')">Electronics</button>
+</section>
+
+<section class="products">
+  <div id="product-container" class="grid"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
