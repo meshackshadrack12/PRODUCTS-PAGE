@@ -130,7 +130,7 @@ const footwearDescriptions = [
 const electronicsDescriptions = [
   "Smartwatch perfect for fitness tracking and notifications.",
   "Earpods with noise cancellation technology.",
-  "Infinix mobile phone with long-lasting battery life.",
+  "Smartphone with high-resolution display and powerful processor.",
   "Electric kettle with fast boiling capability.",
   "USB cable for fast charging and data transfer.",
   "High-speed laptop for work and gaming.",
