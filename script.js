@@ -79,21 +79,11 @@ function displayProducts(list) {
     });
 
     // add to cart
-   body.querySelector("button").onclick = (e) => {
-  cartCount++;
-  document.getElementById("cart-count").innerText = cartCount;
-
-  const btn = e.target;
-  btn.innerText = "Added ✓";
-  btn.style.background = "green";
-
-  setTimeout(() => {
-    btn.innerText = "Add to Cart";
-    btn.style.background = "black";
-  }, 1000);
-};
-
-    container.appendChild(card);
+   card.querySelector("button").onclick = () => {
+      cartCount++;
+      document.getElementById("cart-count").innerText = cartCount;
+    };
+ container.appendChild(card);
   });
 }
 
@@ -118,32 +108,32 @@ document.getElementById("search").addEventListener("input", (e) => {
 
 /* Init */
 const clothesDescriptions = [
-  "Lightweight cotton t-shirt for everyday comfort.",
-  "Premium hoodie designed for warmth and style.",
-  "Slim-fit jeans with a modern look.",
-  "Casual shirt perfect for weekend wear.",
-  "Breathable sportswear for active lifestyles.",
-  "Classic jacket built for durability.",
+  "Lightweight cotton outfit for everyday comfort.",
+  "Classic T-shirt with a stylish design.",
+  "Long-sleeve shirt ideal for cooler weather.",
+  "A pair of shorts perfect for summer activities.",
+  "sweaters made from soft wool, designed to keep you warm and comfortable.",
+  "Full dress for children, made from high-quality materials, perfect for special occasions.",
   "Elegant outfit suitable for special occasions."
 ];
 
 const footwearDescriptions = [
   "Comfortable sneakers for daily wear.",
   "High-performance running shoes.",
-  "Stylish boots with strong grip.",
   "Light sandals perfect for warm weather.",
+  "Stylish shoes with strong grip.",
   "Durable trainers for sports activities.",
-  "Classic leather shoes for formal occasions.",
-  "Slip-on shoes designed for convenience."
+  "Flat shoes designed for all-day comfort.",
+  "Timberland boots made from premium leather, designed for durability and style."
 ];
 
 const electronicsDescriptions = [
-  "Smartphone with advanced camera features.",
+  "Smartwatch perfect for fitness tracking and notifications.",
+  "Earpods with noise cancellation technology.",
+  "Infinix mobile phone with long-lasting battery life.",
+  "Electric kettle with fast boiling capability.",
+  "USB cable for fast charging and data transfer.",
   "High-speed laptop for work and gaming.",
-  "Wireless headphones with clear sound.",
-  "Smartwatch with fitness tracking.",
-  "Portable speaker with deep bass.",
-  "Tablet perfect for entertainment and study.",
   "45 in 1 Precision Screwdriver Set for Phone Computer Repair"
 ];
 createProducts();
